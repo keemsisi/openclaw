@@ -92,7 +92,6 @@ async function ensureBrowserRunning(
   }
 }
 
-
 function parseRequiredTargetId(res: BrowserResponse, rawTargetId: unknown): string | null {
   const targetId = toStringOrEmpty(rawTargetId);
   if (!targetId) {

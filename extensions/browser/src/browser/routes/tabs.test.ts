@@ -391,7 +391,9 @@ describe("browser tab routes", () => {
     navigation.assertBrowserNavigationResultAllowed.mockImplementation(async () => {
       active += 1;
       peak = Math.max(peak, active);
-      await new Promise<void>((resolve) => release.push(resolve));
+      await new Promise<void>((resolve) => {
+        release.push(resolve);
+      });
       active -= 1;
     });
     const pending = list({ profileCtx: withTabs(tabs), ssrfPolicy: {} });
